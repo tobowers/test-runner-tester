@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.1.5
+branches:
+  only:
+    - master
+#services:
+#  - mongodb
+#  - redis-server
+before_script:
+  - bundle install
+env:
+  - COMMAND=rspec spec
+script: "COVERAGE=true bundle exec $COMMAND"
